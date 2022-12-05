@@ -17,34 +17,43 @@
     margin: 20px;
     border: #FF5A5F 1px solid;
     border-radius: 4px;
-    text-align: center;
     display: inline-block;
 }
 
-.container .places article h2
+.container .places article .name_price
+{
+    display: flex;
+}
+
+.container .places article .name_price h2
 {
     font-size: 30px;
-    margin: 5px 0px;
-
 }
 
 .container .places article .price_by_night
 {
     color: #FF5A5F;
-    padding: 10px;
-    border: 4px #FF5A5F solid;
+    border: #FF5A5F 4px solid;
     border-radius: 50px;
+    display: flex;
     max-width: 60px;
     height: 60px;
     font-size: 30px;
-    text-align: right;
+    margin-left: auto;
+    align-items: center;
 }
 
 .container .places article .information
 {
     height: 80px;
-    border-top: #DDDDDD 1px;
-    border-bottom: #DDDDDD 1px;
+    border-top: #DDDDDD 1px solid;
+    border-bottom: #DDDDDD 1px solid;
+    display: flex;
+}
+
+.container .places article .information div
+{
+    margin: 15px 0px 0px 35px;
 }
 
 .container .places article .information .max_guest
@@ -68,6 +77,11 @@
     height: 100%;
 }
 
+.container .places article .user
+{
+    text-align: left;
+    margin: 20px 0px;
+}
 .container .places article .user sup
 {
     font-weight: bold;
@@ -75,11 +89,5 @@
 
 .container .places article .description
 {
-
+    text-align: left;
 }
-
-
-
-
-
-
