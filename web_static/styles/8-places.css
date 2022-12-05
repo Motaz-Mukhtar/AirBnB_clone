@@ -22,12 +22,16 @@
 
 .container .places article .name_price
 {
+    position: relative;
     display: flex;
+    margin-bottom: 10px;
 }
 
 .container .places article .name_price h2
 {
     font-size: 30px;
+    position: absolute;
+    right: 140px;
 }
 
 .container .places article .price_by_night
@@ -41,6 +45,9 @@
     font-size: 30px;
     margin-left: auto;
     align-items: center;
+    justify-content: center;
+    padding: 1.7% 2.6%;
+    margin-top: 20px;
 }
 
 .container .places article .information
