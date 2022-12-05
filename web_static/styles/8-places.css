@@ -17,7 +17,7 @@
     margin: 20px;
     border: #FF5A5F 1px solid;
     border-radius: 4px;
-    display: inline-block;
+    display: inline-table;
 }
 
 .container .places article .name_price
@@ -52,36 +52,45 @@
 
 .container .places article .information
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 80px;
     border-top: #DDDDDD 1px solid;
     border-bottom: #DDDDDD 1px solid;
-    display: flex;
+    margin-bottom: 20px;
 }
 
 .container .places article .information div
 {
-    margin: 15px 0px 0px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 65px;
+}
+
+.container .places article .information div:first-child
+{
+    margin-left: 50px;
 }
 
 .container .places article .information .max_guest
 {
     background: url(../images/icon_group.png) no-repeat;
     width: 100px;
-    height: 100%;
 }
 
 .container .places article .information .number_rooms
 {
     background: url(../images/icon_bed.png) no-repeat;
     width: 100px;
-    height: 100%;
 }
 
 .container .places article .information .number_bathrooms
 {
     background: url(../images/icon_bath.png) no-repeat;
     width: 100px;
-    height: 100%;
 }
 
 .container .places article .user
