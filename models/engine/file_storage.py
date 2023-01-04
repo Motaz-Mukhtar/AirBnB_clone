@@ -29,10 +29,9 @@ class FileStorage:
 
     def save(self):
         s_dict = {}
-        all_dict = FileStorage.__objects
+        s_dict.update(FileStorage.__objects)
         with open(FileStorage.__file_path, 'w', encoding="utf-8") as f:
-            for value in all_dict.values():
-                key = "{}.{}".format(value.__class__.__name__, value.id)
+            for key, value in s_dict.items():
                 s_dict[key] = value.to_dict()
             json.dump(s_dict, f)
 
@@ -41,13 +40,15 @@ class FileStorage:
         (__file_path) exists, otherwise, do nothing. If the file doesn’t
         exist, no exception should be raised) """
         # excutes only if file exists
-        if os.path.isfile(FileStorage.__file_path):
+        classes = {
+            'BaseModel': BaseModel, 'User': User, 'Place': Place,
+            'State': State, 'City': City, 'Amenity': Amenity,
+            'Review': Review
+        }
+        try:
             with open(self.__file_path, 'r') as f:
-                des_json = json.load(f)
-                for key, value in des_json.items():
-                    # to separate class name from class id
-                    obj_key = key.split('.')
-                    # search "__class__": "BaseModel"
-                    class_name = obj_key[0]
-                    # add in __objects the key, value
-                    self.new(eval("{}".format(class_name))(**value))
+                temp = json.load(f)
+                for key, value in temp.items():
+                    self.all()[key] = classes[value['__class__']](**value)
+        except FileNotFoundError:
+            pass
